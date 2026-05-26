@@ -10,6 +10,9 @@
 </p>
 -->
 
+**Blog**: https://jaeunda.github.io/<br />
+**E-mail**: jaeunda@gmail.com
+
 ### In Progress
 | Project | Description |
 |---|---|
