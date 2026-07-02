@@ -12,7 +12,7 @@
 
 ## Projects
 ### [Ongi Device](https://github.com/Ongi-Team/ongi-device)
-`ESP32`, `ESP-IDF`, `FreeRTOS`, `MQTT/HTTP`
+`ESP32` `ESP-IDF` `FreeRTOS` `MQTT/HTTP`
 
 Firmware for a medication automation IoT device that **keeps schedules executable locally** against **RTC time** during **unreliable network conditions**. Uses FreeRTOS tasks and queues to isolate schedule handling, motor control, and event reporting.
 
@@ -27,8 +27,7 @@ Implemented an inverted page table and **copy-on-write file-system snapshots** t
 
 | Project | Description |
 |---|---|
-| [Team-po/Server](https://github.com/Team-po/Server) | 팀 협업 플랫폼 백엔드 (Spring Boot / Java) |
-| [linux-system-programming](https://github.com/jaeunda/linux-system-programming) | System-level C tools — file management daemon, signal handling, ext2 filesystem analyzer (C) |
-| [compiler](https://github.com/jaeunda/compiler) | C subset compiler — RD/LR parser, semantic analysis, symbol table, code generation (C) |
-| [googit-hub](https://github.com/jaeunda/googit-hub) | Git-like CLI tool with Google Drive-based backup and restore (C) |
-
+| [linux-system-programming](https://github.com/jaeunda/linux-system-programming) | System-level C tools - process control, daemon, signal handling, file locking, ext2 image traversal (C) |
+| [compiler](https://github.com/jaeunda/compiler) | C subset compiler pipeline - RD/LR parsing, semantic analysis, symbol tables, code generation (C) |
+| [googit-hub](https://github.com/jaeunda/googit-hub) | Git-like CLI tool with Google Drive-based backup (C) |
+| [Team-po/Server](https://github.com/Team-po/Server) | Backend for a team collaboration platform (Spring Boot / Java) |
