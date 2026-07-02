@@ -10,17 +10,25 @@
 </p>
 -->
 
-### In Progress
-| Project | Description |
-|---|---|
-| [Ongi-Team/ongi-device](https://github.com/Ongi-Team/ongi-device) | ESP32/FreeRTOS 기반 복약 자동화 IoT 디바이스 (ESP-IDF / C) |
-| [Team-po/Server](https://github.com/Team-po/Server) | 팀 협업 플랫폼 백엔드 (Spring Boot / Java) |
+## Projects
+### [Ongi Device](https://github.com/Ongi-Team/ongi-device)
+`ESP32`, `ESP-IDF`, `FreeRTOS`, `MQTT/HTTP`
 
-### Completed
- 
+Firmware for a medication automation IoT device that **keeps schedules executable locally** against **RTC time** during **unreliable network conditions**. Uses FreeRTOS tasks and queues to isolate schedule handling, motor control, and event reporting.
+
+### [Operating-System](https://github.com/jaeunda/operating-system)
+
+`C` `xv6` `Scheduling` `Virtual Memory` `File Systems` 
+
+Extended xv6 across **system calls**, **stride scheduling**, and **virtual-memory translation**.  
+Implemented an inverted page table and **copy-on-write file-system snapshots** to manage kernel-level state safely.
+
+### Other Projects
+
 | Project | Description |
 |---|---|
+| [Team-po/Server](https://github.com/Team-po/Server) | 팀 협업 플랫폼 백엔드 (Spring Boot / Java) |
 | [linux-system-programming](https://github.com/jaeunda/linux-system-programming) | System-level C tools — file management daemon, signal handling, ext2 filesystem analyzer (C) |
-| [operating-system](https://github.com/jaeunda/operating-system) | xv6 kernel implementation — scheduler, virtual memory, copy-on-write, file system snapshot (C) |
 | [compiler](https://github.com/jaeunda/compiler) | C subset compiler — RD/LR parser, semantic analysis, symbol table, code generation (C) |
 | [googit-hub](https://github.com/jaeunda/googit-hub) | Git-like CLI tool with Google Drive-based backup and restore (C) |
+
