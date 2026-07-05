@@ -16,7 +16,7 @@
 
 Firmware for a medication automation IoT device that **keeps schedules executable locally** against **RTC time** during **unreliable network conditions**. Uses FreeRTOS tasks and queues to isolate schedule handling, motor control, and event reporting.
 
-### [Operating-System](https://github.com/jaeunda/operating-system)
+### [xv6 Kernel Extensions](https://github.com/jaeunda/xv6-kernel-extensions)
 
 `C` `xv6` `Scheduling` `Virtual Memory` `File Systems` 
 
