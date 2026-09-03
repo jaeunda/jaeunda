@@ -2,13 +2,8 @@ name: Language Metrics
 
 on:
   schedule:
-    - cron: "0 0 * * 0" # weekly
+    - cron: "0 0 * * 0"
   workflow_dispatch:
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/languages.yml"
 
 jobs:
   language-metrics:
@@ -18,9 +13,11 @@ jobs:
       contents: write
 
     steps:
-      - uses: lowlighter/metrics@latest
+      - name: Generate language metrics
+        uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
+          committer_token: ${{ github.token }}
 
           user: jaeunda
           template: classic
@@ -29,19 +26,18 @@ jobs:
           filename: metrics-languages.svg
           config_timezone: Asia/Seoul
 
-          # Commit author identification
           commits_authoring: >-
             jaeunda,
-            jaeunda@gmail.com
+            jaeunda@gmail.com,
+            130204907+jaeunda@users.noreply.github.com
 
-          # Language statistics
           plugin_languages: yes
           plugin_languages_indepth: yes
+
           plugin_languages_sections: most-used
-          plugin_languages_details: percentage
+          plugin_languages_details: percentage, lines
           plugin_languages_limit: 6
 
-          # Same exclusions as the current card
           plugin_languages_ignored: >-
             html,
             css,
@@ -49,25 +45,9 @@ jobs:
             shell,
             perl
 
-          # Analyze my actual commits from important org repositories too.
-          plugin_languages_indepth_custom: >-
-            Ongi-Team/ongi-device,
-            Team-po/Server,
-            gdsc-ssu/CSocrates2,
-            weavegate/weavegate
-
-          # Prevent one large repository from blocking the whole workflow
-          plugin_languages_analysis_timeout: 15
-          plugin_languages_analysis_timeout_repositories: 3
-
-          # Match the current README palette
           extras_css: |
             svg {
               color: #7a7d72;
-            }
-
-            .items-wrapper {
-              background: #f6f7f5;
             }
 
             h1, h2, h3 {
@@ -76,8 +56,4 @@ jobs:
 
             .field.language {
               color: #2b2e28;
-            }
-
-            .field.language.details small {
-              color: #7a7d72;
             }
