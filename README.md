@@ -17,7 +17,7 @@
   </picture>
 </a>
 
-`Deterministic replay` `Go` `MySQL 8 / InnoDB`
+
 
 A race in a transactional `read → decide → write` workflow breaks once in production, then never again in a test.
 
@@ -26,6 +26,9 @@ A race in a transactional `read → decide → write` workflow breaks once in pr
 - **Keep the evidence ·** every saved schedule replayed its failure (20/20 × 3). Serial and staggered controls never did (0/100 × 3).
 - **Planned ·** a `springtest` adapter for Spring Boot workflows, so the same replayed schedule can gate a real service in CI.
 
+`Deterministic replay` `Go` `MySQL 8 / InnoDB`
+<br><br>
+
 <a href="https://github.com/WeaveTrail/WeaveTrail">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/weavetrail-dark.png">
@@ -33,7 +36,6 @@ A race in a transactional `read → decide → write` workflow breaks once in pr
   </picture>
 </a>
 
-`Trust boundaries` `TypeScript` `Next.js`
 
 A market-surveillance alert hands an investigator a candidate, not a finding. The executions behind it arrive from venues that disagree on field names, time precision, and decimal spelling, and a model's summary can read perfectly while skipping the rows it rests on.
 
@@ -41,6 +43,8 @@ A market-surveillance alert hands an investigator a candidate, not a finding. Th
 - **Approve ·** a reviewer signs off on that exact proposal by hash. A flagged field needs a justified override.
 - **Replay ·** versioned code, not the model, decides whether a short-window price lift supports repeated aggressive buying by the approved actor group.
 - **Abstain ·** five gates return `SUPPORTED`, `NOT_SUPPORTED`, or `INCONCLUSIVE`, and refusing to answer is a real verdict.
+
+`Trust boundaries` `TypeScript` `Next.js`
 
 <br>
 
