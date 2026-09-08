@@ -54,6 +54,7 @@ A market-surveillance alert hands an investigator a candidate, not a finding. Th
 |---|---|
 | [Ongi Device](https://github.com/Ongi-Team/ongi-device) | Medication-assistance firmware that stays correct through network loss — RTC time executes the latest schedule held in memory, MQTT and HTTP reconcile it, and FreeRTOS tasks coordinate motor control and event reporting (C / ESP-IDF) |
 | [Team-po / Server](https://github.com/Team-po/Server) | Transactional matching workflows and asynchronous generation of AI development guides for a team-project platform — the contended path behind weavegate (Java / Spring Boot) |
+| [CarryCheck](https://github.com/jaeunda/CarryCheck) | A verified airline-baggage RAG agent — hybrid retrieval gathers official regulations, deterministic engines own every status and calculation, and a harness rejects explanations whose statuses or source IDs drift from the evidence (Python / FuriosaAI NPU) |
 
 <br>
 
