@@ -48,7 +48,9 @@
 
 <br>
 
-**Team projects**
+<details>
+<summary><b>Team projects</b> · built with teams across embedded, backend, and AI</summary>
+<br>
 
 | Project | What it does |
 |---|---|
@@ -56,12 +58,15 @@
 | [Team-po / Server](https://github.com/Team-po/Server) | Team matching and collaboration for developer side projects. Matching runs in a locked transaction so no one lands on two teams, and each team gets a group chat, GitHub integration, and an AI-generated development guide (Java / Spring Boot) |
 | [CarryCheck](https://github.com/jaeunda/CarryCheck) | Hybrid RAG agent with deterministic decisions and guardrailed generation. BM25 and Qwen3 embeddings fused by RRF reach Recall@3 1.00, a harness that rejects status or source drift passes 10/10, and selective context cuts tokens by 38.6% (Python / FuriosaAI) |
 
+</details>
+<details>
+<summary><b>Foundations</b> · where the concurrency, memory, and systems intuitions came from</summary>
 <br>
-
-**Foundations** · where the concurrency, memory, and systems intuitions came from
 
 | Project | What it involved |
 |---|---|
 | [xv6-kernel-extensions](https://github.com/jaeunda/xv6-kernel-extensions) | Stride scheduling, an inverted page table, and copy-on-write file-system snapshots inside the xv6 kernel (C) |
 | [linux-system-programming](https://github.com/jaeunda/linux-system-programming) | Process control, daemons, signal handling, file locking, ext2 image traversal (C) |
 | [compiler](https://github.com/jaeunda/compiler) | C-subset pipeline — RD/LR parsing, semantic analysis, symbol tables, code generation (C) |
+
+</details>
