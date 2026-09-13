@@ -4,9 +4,9 @@
 </p>
 
 <p align="center">
-  <b>Making unreproducible failures reproducible, and unverifiable judgments checkable.</b>
+  <b>Deterministic cores for nondeterministic systems.</b>
   <br>
-  <sub><i>A result is trustworthy only when someone else can reproduce it from the same inputs.</i></sub>
+  <sub><i>Concurrency and uncertainty are given. Consistent state and repeatable decisions by design.</i></sub>
 </p>
 <br>
 
@@ -19,14 +19,14 @@
 
 
 
-A race in a transactional `read → decide → write` workflow breaks once in production, then never again in a test.
+**Automated transaction verification for Spring Boot CI**
 
-- **Force the order ·** you place the sync-points, it walks the interleavings against real MySQL. No timing sleeps.
-- **Judge the state ·** SQL rules decide whether the invariant held.
-- **Keep the evidence ·** every saved schedule replayed its failure (20/20 × 3). Serial and staggered controls never did (0/100 × 3).
-- **Planned ·** a `springtest` adapter for Spring Boot workflows, so the same replayed schedule can gate a real service in CI.
+- **Replay ·** the exact interleaving behind a race, against real MySQL.
+- **Judge ·** domain invariants in SQL, with evidence you can rerun.
+- **Prove ·** the fix closes it — 20/20 before, 0/20 after.
+- **Gate ·** every pull request, before it merges.
 
-`Deterministic replay` `Go` `MySQL 8 / InnoDB`
+`Deterministic replay` `Go` `MySQL 8 / InnoDB` `Testcontainers` `GitHub Actions`
 <br><br>
 
 <a href="https://github.com/WeaveTrail/WeaveTrail">
@@ -37,14 +37,14 @@ A race in a transactional `read → decide → write` workflow breaks once in pr
 </a>
 
 
-A market-surveillance alert hands an investigator a candidate, not a finding. The executions behind it arrive from venues that disagree on field names, time precision, and decimal spelling, and a model's summary can read perfectly while skipping the rows it rests on.
+**Evidence-graded market analysis from official releases and public data**
 
-- **Propose ·** a constrained mapper aligns each source column to one allowlisted transform, with its confidence and its evidence.
-- **Approve ·** a reviewer signs off on that exact proposal by hash. A flagged field needs a justified override.
-- **Replay ·** versioned code, not the model, decides whether a short-window price lift supports repeated aggressive buying by the approved actor group.
-- **Abstain ·** five gates return `SUPPORTED`, `NOT_SUPPORTED`, or `INCONCLUSIVE`, and refusing to answer is a real verdict.
+- **Collect ·** FSC, FSS, and SEC releases, snapshotted by hash and joined into one event.
+- **Verify ·** quotes matched to the source bytes, every number recomputed by code.
+- **Grade ·** each sentence marked quoted, computed, differs, or AI interpretation.
+- **Share ·** a one-page brief whose link reopens the same evidence.
 
-`Trust boundaries` `TypeScript` `Next.js`
+`AI trust boundaries` `TypeScript` `Next.js`
 
 <br>
 
@@ -52,9 +52,9 @@ A market-surveillance alert hands an investigator a candidate, not a finding. Th
 
 | Project | What it does |
 |---|---|
-| [Ongi Device](https://github.com/Ongi-Team/ongi-device) | Medication-assistance firmware that stays correct through network loss — RTC time executes the latest schedule held in memory, MQTT and HTTP reconcile it, and FreeRTOS tasks coordinate motor control and event reporting (C / ESP-IDF) |
-| [Team-po / Server](https://github.com/Team-po/Server) | Transactional matching workflows and asynchronous generation of AI development guides for a team-project platform — the contended path behind weavegate (Java / Spring Boot) |
-| [CarryCheck](https://github.com/jaeunda/CarryCheck) | A verified airline-baggage RAG agent — hybrid retrieval gathers official regulations, deterministic engines own every status and calculation, and a harness rejects explanations whose statuses or source IDs drift from the evidence (Python / FuriosaAI NPU) |
+| [Ongi Device](https://github.com/Ongi-Team/ongi-device) | Connected medication-dispenser firmware, from caregiver schedule to confirmed intake. The device runs the server's schedule on synced time, opens the right slot, and reports whether the pill was actually taken (C / ESP-IDF) |
+| [Team-po / Server](https://github.com/Team-po/Server) | Team matching and collaboration for developer side projects. Matching runs in a locked transaction so no one lands on two teams, and each team gets a group chat, GitHub integration, and an AI-generated development guide (Java / Spring Boot) |
+| [CarryCheck](https://github.com/jaeunda/CarryCheck) | Hybrid RAG agent with deterministic decisions and guardrailed generation. BM25 and Qwen3 embeddings fused by RRF reach Recall@3 1.00, a harness that rejects status or source drift passes 10/10, and selective context cuts tokens by 38.6% (Python / FuriosaAI) |
 
 <br>
 
