@@ -24,7 +24,7 @@
 - **Replay ·** the exact interleaving behind a race, against real MySQL.
 - **Judge ·** domain invariants in SQL, with evidence you can rerun.
 - **Prove ·** the fix closes it — 20/20 before, 0/20 after.
-- **Gate ·** every pull request, before it merges.
+- **Gate ·** every pull request, as a GitHub Marketplace action.
 
 `Deterministic replay` `Go` `MySQL 8 / InnoDB` `Testcontainers` `GitHub Actions`
 <br><br>
@@ -37,14 +37,14 @@
 </a>
 
 
-**Evidence-graded market analysis from official releases and public data**
+**Measured model selection for reading unfamiliar trade files**
 
-- **Collect ·** FSC, FSS, and SEC releases, snapshotted by hash and joined into one event.
-- **Verify ·** quotes matched to the source bytes, every number recomputed by code.
-- **Grade ·** each sentence marked quoted, computed, differs, or AI interpretation.
-- **Share ·** a one-page brief whose link reopens the same evidence.
+- **Propose ·** a model maps each column to a canonical field, or returns `REVIEW_REQUIRED`.
+- **Approve ·** a person approves the exact proposal, bound to its hash.
+- **Verify ·** fixed code re-derives every event and decides every result.
+- **Select ·** models compared on a sealed held-out set against a non-model baseline, by a rule fixed before the run.
 
-`AI trust boundaries` `TypeScript` `Next.js`
+`AI trust boundaries` `Model evaluation` `TypeScript` `Next.js`
 
 <br>
 
@@ -57,6 +57,16 @@
 | [Ongi Device](https://github.com/Ongi-Team/ongi-device) | Connected medication-dispenser firmware, from caregiver schedule to confirmed intake. The device runs the server's schedule on synced time, opens the right slot, and reports whether the pill was actually taken (C / ESP-IDF) |
 | [Team-po / Server](https://github.com/Team-po/Server) | Team matching and collaboration for developer side projects. Matching runs in a locked transaction so no one lands on two teams, and each team gets a group chat, GitHub integration, and an AI-generated development guide (Java / Spring Boot) |
 | [CarryCheck](https://github.com/jaeunda/CarryCheck) | Hybrid RAG agent with deterministic decisions and guardrailed generation. BM25 and Qwen3 embeddings fused by RRF reach Recall@3 1.00, a harness that rejects status or source drift passes 10/10, and selective context cuts tokens by 38.6% (Python / FuriosaAI) |
+
+</details>
+<details>
+<summary><b>Performance studies</b> · how far parallel hardware stretches a fixed time budget</summary>
+<br>
+
+| Project | What it asks |
+|---|---|
+| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Stress-testing market-surveillance detectors within a fixed time budget. An incremental exact method runs 349× more trials per second than full recomputation, with 0 mismatches across 2,112 checks (C++ / OpenMP / CUDA) |
+| [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. Moving the whole pipeline to the GPU cuts 99.4 ms to 2.58 ms per batch (Python / CUDA) |
 
 </details>
 <details>
