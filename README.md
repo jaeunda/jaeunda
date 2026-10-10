@@ -49,6 +49,16 @@
 <br>
 
 <details>
+<summary><b>Performance studies</b> · what parallel hardware buys end to end, within a fixed deadline</summary>
+<br>
+
+| Project | What it asks |
+|---|---|
+| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Stress-testing market-surveillance detectors within a fixed time budget. An incremental exact method runs 349× more trials per second than full recomputation, with 0 mismatches across 2,112 checks (C++ / OpenMP / CUDA) |
+| [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. Moving the whole pipeline to the GPU cuts 99.4 ms to 2.58 ms per batch (Python / CUDA) |
+
+</details>
+<details>
 <summary><b>Team projects</b> · built with teams across embedded, backend, and AI</summary>
 <br>
 
@@ -57,16 +67,6 @@
 | [Ongi Device](https://github.com/Ongi-Team/ongi-device) | Connected medication-dispenser firmware, from caregiver schedule to confirmed intake. The device runs the server's schedule on synced time, opens the right slot, and reports whether the pill was actually taken (C / ESP-IDF) |
 | [Team-po / Server](https://github.com/Team-po/Server) | Team matching and collaboration for developer side projects. Matching runs in a locked transaction so no one lands on two teams, and each team gets a group chat, GitHub integration, and an AI-generated development guide (Java / Spring Boot) |
 | [CarryCheck](https://github.com/jaeunda/CarryCheck) | Hybrid RAG agent with deterministic decisions and guardrailed generation. BM25 and Qwen3 embeddings fused by RRF reach Recall@3 1.00, a harness that rejects status or source drift passes 10/10, and selective context cuts tokens by 38.6% (Python / FuriosaAI) |
-
-</details>
-<details>
-<summary><b>Performance studies</b> · how far parallel hardware stretches a fixed time budget</summary>
-<br>
-
-| Project | What it asks |
-|---|---|
-| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Stress-testing market-surveillance detectors within a fixed time budget. An incremental exact method runs 349× more trials per second than full recomputation, with 0 mismatches across 2,112 checks (C++ / OpenMP / CUDA) |
-| [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. Moving the whole pipeline to the GPU cuts 99.4 ms to 2.58 ms per batch (Python / CUDA) |
 
 </details>
 <details>
