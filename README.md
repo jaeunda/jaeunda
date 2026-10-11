@@ -37,22 +37,20 @@
 </a>
 
 
-**Data standardization pipeline that applies AI column mapping only after quality checks and approval**
+**Deterministic trade-case replay with measured selection of its column-mapping model**
 
-- **Propose ·** a model maps each column to a common schema, or returns `REVIEW_REQUIRED`.
-- **Check ·** a closed contract and dry-run transforms reject invalid proposals; a person approves the exact one by hash.
-- **Compute ·** deterministic code computes every result and traces it to its source row.
-- **Select ·** six quality criteria, fixed before the run, decide in code whether a model may be applied automatically.
+- **Propose ·** a model maps each column of an unfamiliar trade file to a canonical field, or returns `REVIEW_REQUIRED`.
+- **Check ·** a closed contract and a dry run reject invalid proposals; a person approves the exact proposal, bound to its hash.
+- **Compute ·** the replay engine re-derives events from stored rows and tests a versioned pattern rule; each finding traces to its `rawRowHash`.
+- **Select ·** candidates run on a sealed held-out set beside a non-model baseline; six criteria fixed before the run decide whether any may propose mappings.
 
 `AI trust boundaries` `Model evaluation` `TypeScript` `Next.js`
 
 <br>
 
-<b>Performance studies</b> · how much CPU and GPU parallelism speeds up a whole pipeline under a fixed time limit
-
-| Project | What it asks |
+| Performance studies | What it measures |
 |---|---|
-| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Large-scale data processing engine that stress-tests market-surveillance policies within a fixed time budget. Recomputing only the changed range cuts a trial from 1,180.55 ms to 3.36 ms ([349×](https://github.com/jaeunda/surveillance-frontier#latest-result--phase-1), 600K rows, one thread), matching full recomputation in all 2,112 checks (C++ / OpenMP / CUDA) |
+| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Time-budgeted stress testing of market-surveillance detection policies on CPU and GPU. The incremental exact method recomputes only the windows a test event touches, cutting a trial from 1,180.55 ms to 3.36 ms ([349×](https://github.com/jaeunda/surveillance-frontier#latest-result--phase-1), one week of 1-second BTCUSDT bars, one thread), with 0 mismatches against full recomputation across 2,112 checks (C++ / OpenMP / CUDA) |
 | [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. On a Tesla T4, moving the whole pipeline to the GPU cuts [99.4 ms to 2.58 ms](https://github.com/jaeunda/drone-doa-gpu#phase-1-result) per 64-frame batch (Python / CUDA) |
 
 <details>
