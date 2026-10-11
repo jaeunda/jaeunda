@@ -52,7 +52,7 @@
 |---|---|
 | [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Time-budgeted stress testing of market-surveillance detection policies on CPU and GPU. The incremental exact method recomputes only the windows a test event touches, cutting a trial from 1,180.55 ms to 3.36 ms ([349×](https://github.com/jaeunda/surveillance-frontier#latest-result--phase-1), one week of 1-second BTCUSDT bars, one thread), with 0 mismatches against full recomputation across 2,112 checks (C++ / OpenMP / CUDA) |
 | [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. On a Tesla T4, moving the whole pipeline to the GPU cuts [99.4 ms to 2.58 ms](https://github.com/jaeunda/drone-doa-gpu#phase-1-result) per 64-frame batch (Python / CUDA) |
-
+<br>
 <details>
 <summary><b>Team projects</b> · built with teams across embedded, backend, and AI</summary>
 <br>
