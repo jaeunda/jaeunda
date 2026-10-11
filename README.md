@@ -19,13 +19,12 @@
 
 
 
-**Automated transaction verification for Spring Boot CI**<br>
-Two overlapping requests can both pass a check and write duplicate state, and whether a test sees it depends on timing.
+**Developer tool that automates database race testing in Spring Boot CI**
 
-- **Replay ·** the exact interleaving behind a race, against real MySQL.
-- **Judge ·** domain invariants in SQL, saving the schedule, trace, and violating rows for rerun.
-- **Prove ·** the fix on a Spring Boot app: the same saved schedule [violates 20/20 before, 0/20 after](https://github.com/weavegate/weavegate/blob/main/docs/experiments/spring-replay.md#repeated-paired-test).
-- **Gate ·** fails a pull request when an invariant breaks, as a GitHub Marketplace action.
+- **Replay ·** saves the interleaving between sync-points and reruns it against real MySQL.
+- **Judge ·** SQL invariants decide pass or fail, so the verdict does not depend on timing.
+- **Prove ·** on one saved schedule, the vulnerable Spring Boot app fails and the fixed one passes, [20/20 each](https://github.com/weavegate/weavegate/blob/main/docs/experiments/spring-replay.md#repeated-paired-test).
+- **Gate ·** one workflow step, published on GitHub Marketplace, fails the pull request with the schedule, trace, and violating rows attached.
 
 `Deterministic replay` `Go` `MySQL 8 / InnoDB` `Testcontainers` `GitHub Actions`
 <br><br>
@@ -38,13 +37,12 @@ Two overlapping requests can both pass a check and write duplicate state, and wh
 </a>
 
 
-**Measured selection of the model that maps columns in unfamiliar trade files**<br>
-A model can read price as quantity in an unfamiliar trade file, and every value still passes the format checks.
+**Data standardization pipeline that applies AI column mapping only after quality checks and approval**
 
-- **Propose ·** a model maps each column to a canonical field, or returns `REVIEW_REQUIRED`.
-- **Approve ·** a person approves the exact proposal, bound to its hash.
-- **Verify ·** deterministic code re-derives every event and decides every result.
-- **Select ·** models compared on a sealed held-out set against a non-model baseline, by a rule fixed before the run.
+- **Propose ·** a model maps each column to a common schema, or returns `REVIEW_REQUIRED`.
+- **Check ·** a closed contract and dry-run transforms reject invalid proposals; a person approves the exact one by hash.
+- **Compute ·** deterministic code computes every result and traces it to its source row.
+- **Select ·** six quality criteria, fixed before the run, decide in code whether a model may be applied automatically.
 
 `AI trust boundaries` `Model evaluation` `TypeScript` `Next.js`
 
@@ -54,7 +52,7 @@ A model can read price as quantity in an unfamiliar trade file, and every value 
 
 | Project | What it asks |
 |---|---|
-| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Stress-testing market-surveillance detectors within a fixed time budget. On a single CPU thread, an incremental exact method runs [349× more trials per second](https://github.com/jaeunda/surveillance-frontier#latest-result--phase-1) than full recomputation, with 0 mismatches across 2,112 checks (C++ / OpenMP / CUDA) |
+| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Large-scale data processing engine that stress-tests market-surveillance policies within a fixed time budget. Recomputing only the changed range cuts a trial from 1,180.55 ms to 3.36 ms ([349×](https://github.com/jaeunda/surveillance-frontier#latest-result--phase-1), 600K rows, one thread), matching full recomputation in all 2,112 checks (C++ / OpenMP / CUDA) |
 | [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. On a Tesla T4, moving the whole pipeline to the GPU cuts [99.4 ms to 2.58 ms](https://github.com/jaeunda/drone-doa-gpu#phase-1-result) per 64-frame batch (Python / CUDA) |
 
 <details>
