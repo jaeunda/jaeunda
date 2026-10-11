@@ -6,7 +6,7 @@
 <p align="center">
   <b>Deterministic cores for nondeterministic systems.</b>
   <br>
-  <sub><i>Concurrency and uncertainty are given. Consistent state and repeatable decisions by design.</i></sub>
+  <sub><i>Tools that make concurrent, AI-assisted, and parallel systems replayable and measurable.</i></sub>
 </p>
 <br>
 
@@ -19,12 +19,13 @@
 
 
 
-**Automated transaction verification for Spring Boot CI**
+**Automated transaction verification for Spring Boot CI**<br>
+Two overlapping requests can both pass a check and write duplicate state, and whether a test sees it depends on timing.
 
 - **Replay ·** the exact interleaving behind a race, against real MySQL.
-- **Judge ·** domain invariants in SQL, with evidence you can rerun.
-- **Prove ·** the fix closes it — 20/20 before, 0/20 after.
-- **Gate ·** every pull request, as a GitHub Marketplace action.
+- **Judge ·** domain invariants in SQL, saving the schedule, trace, and violating rows for rerun.
+- **Prove ·** the fix on a Spring Boot app: the same saved schedule [violates 20/20 before, 0/20 after](https://github.com/weavegate/weavegate/blob/main/docs/experiments/spring-replay.md#repeated-paired-test).
+- **Gate ·** fails a pull request when an invariant breaks, as a GitHub Marketplace action.
 
 `Deterministic replay` `Go` `MySQL 8 / InnoDB` `Testcontainers` `GitHub Actions`
 <br><br>
@@ -37,27 +38,25 @@
 </a>
 
 
-**Measured model selection for reading unfamiliar trade files**
+**Measured selection of the model that maps columns in unfamiliar trade files**<br>
+A model can read price as quantity in an unfamiliar trade file, and every value still passes the format checks.
 
 - **Propose ·** a model maps each column to a canonical field, or returns `REVIEW_REQUIRED`.
 - **Approve ·** a person approves the exact proposal, bound to its hash.
-- **Verify ·** fixed code re-derives every event and decides every result.
+- **Verify ·** deterministic code re-derives every event and decides every result.
 - **Select ·** models compared on a sealed held-out set against a non-model baseline, by a rule fixed before the run.
 
 `AI trust boundaries` `Model evaluation` `TypeScript` `Next.js`
 
 <br>
 
-<details>
-<summary><b>Performance studies</b> · what parallel hardware buys end to end, within a fixed deadline</summary>
-<br>
+<b>Performance studies</b> · how much CPU and GPU parallelism speeds up a whole pipeline under a fixed time limit
 
 | Project | What it asks |
 |---|---|
-| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Stress-testing market-surveillance detectors within a fixed time budget. An incremental exact method runs 349× more trials per second than full recomputation, with 0 mismatches across 2,112 checks (C++ / OpenMP / CUDA) |
-| [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. Moving the whole pipeline to the GPU cuts 99.4 ms to 2.58 ms per batch (Python / CUDA) |
+| [surveillance-frontier](https://github.com/jaeunda/surveillance-frontier) | Stress-testing market-surveillance detectors within a fixed time budget. On a single CPU thread, an incremental exact method runs [349× more trials per second](https://github.com/jaeunda/surveillance-frontier#latest-result--phase-1) than full recomputation, with 0 mismatches across 2,112 checks (C++ / OpenMP / CUDA) |
+| [drone-doa-gpu](https://github.com/jaeunda/drone-doa-gpu) | Real-time acoustic direction finding for drones on an 8-mic array. On a Tesla T4, moving the whole pipeline to the GPU cuts [99.4 ms to 2.58 ms](https://github.com/jaeunda/drone-doa-gpu#phase-1-result) per 64-frame batch (Python / CUDA) |
 
-</details>
 <details>
 <summary><b>Team projects</b> · built with teams across embedded, backend, and AI</summary>
 <br>
@@ -66,17 +65,19 @@
 |---|---|
 | [Ongi Device](https://github.com/Ongi-Team/ongi-device) | Connected medication-dispenser firmware, from caregiver schedule to confirmed intake. The device runs the server's schedule on synced time, opens the right slot, and reports whether the pill was actually taken (C / ESP-IDF) |
 | [Team-po / Server](https://github.com/Team-po/Server) | Team matching and collaboration for developer side projects. Matching runs in a locked transaction so no one lands on two teams, and each team gets a group chat, GitHub integration, and an AI-generated development guide (Java / Spring Boot) |
-| [CarryCheck](https://github.com/jaeunda/CarryCheck) | Hybrid RAG agent with deterministic decisions and guardrailed generation. BM25 and Qwen3 embeddings fused by RRF reach Recall@3 1.00, a harness that rejects status or source drift passes 10/10, and selective context cuts tokens by 38.6% (Python / FuriosaAI) |
+| [CarryCheck](https://github.com/jaeunda/CarryCheck) | Hybrid RAG agent for airline baggage rules, with deterministic decisions and guardrailed generation. On a 10-question set, BM25 and Qwen3 embeddings fused by RRF reach [Recall@3 1.00](https://github.com/jaeunda/CarryCheck#performance), a harness that rejects changed statuses or unknown source IDs passes 10/10, and selective context cuts one request's tokens by 38.6% (Python / FuriosaAI) |
 
 </details>
 <details>
-<summary><b>Foundations</b> · where the concurrency, memory, and systems intuitions came from</summary>
+<summary><b>Foundations</b> · coursework and labs in kernels, file systems, storage, compilers, and cloud platforms</summary>
 <br>
 
 | Project | What it involved |
 |---|---|
-| [xv6-kernel-extensions](https://github.com/jaeunda/xv6-kernel-extensions) | Stride scheduling, an inverted page table, and copy-on-write file-system snapshots inside the xv6 kernel (C) |
-| [linux-system-programming](https://github.com/jaeunda/linux-system-programming) | Process control, daemons, signal handling, file locking, ext2 image traversal (C) |
-| [compiler](https://github.com/jaeunda/compiler) | C-subset pipeline — RD/LR parsing, semantic analysis, symbol tables, code generation (C) |
+| [xv6-kernel-extensions](https://github.com/jaeunda/xv6-kernel-extensions) | Kernel changes for saved file versions, observable physical memory, and weighted scheduling in xv6. Copy-on-write snapshots allocate 98.85% fewer extra blocks than a full copy (3 vs 262), and stride scheduling holds 1:2:4 CPU shares within 0.14 points, against 23.81 for round-robin (C) |
+| [linux-filesystem-tools](https://github.com/jaeunda/linux-filesystem-tools) | File organization tools from interactive copy to a background daemon, plus a read-only ext2 image inspector. Organizing 512 files / 128 MiB takes a median 0.122 s, with all 2,560 copies matching by SHA-256 (C) |
+| [storage-io-lab](https://github.com/jaeunda/storage-io-lab) | Flash I/O, a hybrid flash translation layer, and fixed-slot record storage on a file-backed emulator. Reusing 250 deleted slots keeps a 1,000-record file at zero growth, and write amplification measures 1.000× to 3.988× by workload (C) |
+| [compiler](https://github.com/jaeunda/compiler) | Eight steps from an expression calculator to a C-subset compiler. RD and LR parsing, scoped symbol tables, and type annotation lead to stack-machine assembly that the included interpreter runs (C) |
+| [cloud-native-labs](https://github.com/jaeunda/cloud-native-labs) | Concept notes and hands-on labs on how VMs, networking, and shared storage hold up a container platform. Covers Kubernetes workloads, Services and Ingress, persistent volumes, scheduling and rollouts, CI/CD, and AWS EKS (Kubernetes / AWS) |
 
 </details>
